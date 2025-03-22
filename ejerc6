@@ -1,0 +1,21 @@
+package ejercicio6;
+
+import java.util.Scanner;
+
+public class ejerc6 { // cambiar si es necesario
+	public static void main(String[] args) {
+
+		float nota;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese su nota: ");
+		nota = ingreso.nextFloat();
+		float numeroAleatorio = (int) (Math.random() * 10);// no se donde ponerlo
+
+		int numRedondeado = Math.round(nota);
+
+		System.out.println("\nsu nota es: " + numRedondeado);
+
+	}
+
+}

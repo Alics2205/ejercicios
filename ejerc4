@@ -1,0 +1,25 @@
+package ejercicio4;
+import java.util.Scanner;
+public class ejercicio4 {
+
+	public static void main(String[] args) {
+		
+ int años, meses,semanas,dias;
+ Scanner ingreso = new Scanner(System.in);
+  System.out.println("ingrese la cant de años :");
+  años = ingreso.nextInt();
+		
+  System.out.println("ingrese la cant de meses :");
+ meses = ingreso.nextInt();
+		
+  System.out.println("ingrese la cant de semanas:");
+  semanas = ingreso.nextInt();
+		
+  dias = años*365+meses*30+semanas*7;
+  System.out.println("su cant de dias en total es de "+dias);
+		
+	}
+	
+	
+	
+}

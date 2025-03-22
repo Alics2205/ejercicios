@@ -1,0 +1,14 @@
+package ejercicio;
+
+public class ejercicio1 {
+	public static void main(String[] args) {
+
+		String nombre = "allison";
+		String apellido = "cantera";
+
+		System.out.println("\ntu nombre es: " + nombre);
+		System.out.println("\ntu apellido es: " + apellido);
+
+	}
+
+}

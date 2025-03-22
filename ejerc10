@@ -1,0 +1,28 @@
+package ejercicio10;
+
+import java.util.Scanner;
+
+public class ejerc10 {
+
+	public static void main(String[] args) {
+
+		char M, S, L;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese un talle: ");
+		char talle = ingreso.next().charAt(0);
+
+		if (talle == 'M') {
+			System.out.println("quedan 2 remeras.");
+		}
+
+		if (talle == 'S') {
+			System.out.println("quedan 5 remeras.");
+		}
+
+		if (talle == 'L') {
+			System.out.println("no quedan remeras.");
+		}
+
+	}
+}

@@ -1,0 +1,49 @@
+package ejercicio11;
+
+import java.util.Scanner;
+
+public class ejerc11 {
+	public static void main(String[] args) {
+
+	    int nota;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese un nota: ");
+		nota = ingreso.nextInt();
+		
+		if (nota>10) {
+			System.out.println("ingreso un valor incorrecto");
+		}
+		
+		else if (nota>0 && nota<4){
+			System.out.println("insuficiente.");
+
+		}
+		
+		
+		else if (nota>2 && nota<7 ){
+			System.out.println("no logrado.");
+	
+		}
+		
+		else if (nota>5 && nota<8 ){
+			System.out.println("suficiente.");
+	    }	
+		
+		
+		else if (nota>7 && nota<10){
+			System.out.println("notable.");
+
+		}
+
+	
+		else if (nota==10){
+			System.out.println("sobresaliente.");
+	
+	
+	
+	}	
+}
+}
+
+

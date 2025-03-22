@@ -1,0 +1,26 @@
+package ejercicio8;
+
+import java.util.Scanner;
+
+public class ejerc8 {
+
+	public static void main(String[] args) {
+
+		String nombre, apellido;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese su nombre: ");
+		nombre = ingreso.next();
+
+		System.out.println("ingrese su apellido: ");
+		apellido = ingreso.next();
+		
+		int numeroAleatorio = (int)(Math.random()*99);
+	
+		System.out.println("su nombre es: "+nombre);
+		System.out.println("su apellido es: "+apellido);
+		System.out.println("el num de : " +nombre+ " es "+numeroAleatorio);
+
+	}
+
+}

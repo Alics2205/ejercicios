@@ -1,0 +1,28 @@
+package ejercicio7;
+import java.util.Scanner;
+public class ejerc7 {
+	
+	public static void main(String[] args) {
+		double  num1;
+		float suma,multip;
+		Scanner ingreso = new Scanner(System.in);
+		
+		System.out.println("ingrese un num entero con dos decimales : ");
+		num1 = ingreso.nextFloat();
+		double base = num1, exponente = 2;
+		int potencia = (int)Math.pow(base, exponente);
+		
+		double numeroAleatorio = Math.random();
+
+		suma = (float) (potencia + numeroAleatorio);
+		multip = suma*7;
+		double raiz_cuadrada1 =  Math.sqrt(multip);
+
+		
+		
+	System.out.println("su resultado es: "+ raiz_cuadrada1);
+		
+		//preguntarle a sebas si esta bien, porq no yo se que hice 
+	}
+
+}

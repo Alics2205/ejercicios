@@ -1,0 +1,18 @@
+package ejercio2;
+
+public class ejercio2 {
+	public static void main(String[] args) {
+
+		String nombre = "allison";
+		String apellido = "cantera";
+		char genero = 'f';
+		int edad = 16;
+		
+		System.out.println("\n\ttu nombre es: " + nombre);
+		System.out.println("\n\ttu apellido es: " + apellido);
+		System.out.println("\n\ttu genero es: " +genero );
+		System.out.println("\n\ttu edad es: " + edad);
+
+	}
+
+}

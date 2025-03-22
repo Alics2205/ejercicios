@@ -1,0 +1,25 @@
+package ejercicio5;
+
+import java.util.Scanner;
+
+public class ejerc5 {
+
+	public static void main(String[] args) {
+
+		int num1;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese un num para calcular la raiz: ");
+		num1 = ingreso.nextInt();
+
+		double raiz_cuadrada = Math.sqrt(num1);
+
+		System.out.println("\nLa raiz de " + num1 + " es: " + raiz_cuadrada);
+
+		double raiz_cuadrada1 = (int) Math.sqrt(num1);
+
+		System.out.println("\nLa raiz de " + num1 + " es: " + raiz_cuadrada1);
+
+	}
+
+}

@@ -1,0 +1,44 @@
+package ejercicio13;
+
+import java.util.Scanner;
+
+public class ejerc13 {
+	public static void main(String[] args) {
+
+		int hora, min, seg;
+		Scanner ingreso = new Scanner(System.in);
+		System.out.println("ingrese la hora :");
+		hora = ingreso.nextInt();
+
+		System.out.println("ingrese los minutos :");
+		min = ingreso.nextInt();
+
+		System.out.println("ingrese los segundos:");
+		seg = ingreso.nextInt();
+
+		if (hora < 24) {
+			System.out.println("el valor es correcto ");
+		}
+
+		else if (min < 60) {
+			System.out.println("el valor es correcto ");
+		}
+
+		else if (seg < 60) {
+			System.out.println("el valor es correcto ");
+		}
+
+		if (hora > 24) {
+			System.out.println("su valor es incorrecto");
+		}
+		if (min > 60) {
+			System.out.println("su valor es incorrecto");
+		}
+		if (seg > 60) {
+			System.out.println("su valor es incorrecto");
+		}
+
+		return;
+
+	}
+}

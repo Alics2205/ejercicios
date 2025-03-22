@@ -1,0 +1,28 @@
+package ejercicio3;
+
+import java.util.Scanner;
+
+public class ejerc3 {
+
+	public static void main(String[] args) {
+
+		float multip, div, resta, suma, num1, num2;
+		Scanner ingreso = new Scanner(System.in);
+		System.out.println("ingrese un num");
+		num1 = ingreso.nextFloat();
+		System.out.println("ingrese otro num");
+		num2 = ingreso.nextFloat();
+		multip = num1 * num2;
+		div = num1 / num2;
+		resta = num1 - num2;
+		suma = num1 + num2;
+
+		System.out.println("\n\tsu multip es :"+multip);
+		System.out.println("\n\tsu div  es :"+div);
+		System.out.println("\n\tsu resta es :"+resta);
+		System.out.println("\n\tsu suma es :"+suma);
+	
+	}
+	
+
+}

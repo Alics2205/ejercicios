@@ -1,0 +1,28 @@
+package ejercicio12;
+
+import java.util.Scanner;
+
+public class ejerc12 {
+
+	public static void main(String[] args) {
+
+	    int num;
+		Scanner ingreso = new Scanner(System.in);
+
+		System.out.println("ingrese un num entre 0 y 99: ");
+		num = ingreso.nextInt();
+
+		int numeroAleatorio = (int)(Math.random()*99);
+		
+		if (num==numeroAleatorio) {
+		System.out.println("gano");	
+		}
+		
+		
+		else if (num != numeroAleatorio) {
+		System.out.println("perdio");	
+		}
+		
+
+}
+}

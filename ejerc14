@@ -1,28 +1,33 @@
 package ejerc14;
+
 import java.util.Scanner;
 
 public class ejerc14 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-   
-        System.out.print("Ingrese su edad: ");
-        int edad = scanner.nextInt();
+	public static void main(String[] args) {
+		int edad;
+		Scanner ingreso = new Scanner(System.in);
 
-        // Solicitar si pagó la entrada
-        System.out.print("¿Pagó la entrada? (true/false): ");
-        boolean pagoEntrada = scanner.nextBoolean();
+		System.out.println("ingrese su edad: ");
+		edad = ingreso.nextInt();
 
-        // Verificar si es mayor de edad
-        if (edad >= 18) {
-            // Si es mayor de edad, verificar si pagó la entrada
-            if (pagoEntrada) {
-                System.out.println("Entrada válida. ¡Disfruta del recital!");
-            } else {
-                System.out.println("Entrada no abonada. No puede ingresar.");
-            }
-        } else {
-            // Si no es mayor de edad
-            System.out.println("Entrada no permitida por no cumplir la mayoria de edad.");
-        }    
-    }
+		System.out.println("¿pago la entrada? (true/false): ");
+		boolean pagoEntrada = ingreso.nextBoolean();//variable booleana
+
+		if (edad >= 18) {//condicional anidada
+         //el if pricipal se refiere a la edad 
+			
+	   //en cambio los que les siguen se refieren al pago 	
+			if (pagoEntrada) {
+				System.out.println("entrada valida");
+			} else {
+				System.out.println("entrada no abonada, No puede ingresar. ");
+
+			}
+		} else {
+			System.out.println("entrada no permitida. ");
+		}
+		
+
+	}
+
 }

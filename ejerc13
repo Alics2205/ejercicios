@@ -17,25 +17,25 @@ public class ejerc13 {
 		seg = ingreso.nextInt();
 
 		if (hora < 24) {
-			System.out.println("el valor es correcto ");
+			System.out.println("el valor de la hora es correcto ");
 		}
 
 		else if (min < 60) {
-			System.out.println("el valor es correcto ");
+			System.out.println("el valor del minuto es correcto ");
 		}
 
 		else if (seg < 60) {
-			System.out.println("el valor es correcto ");
+			System.out.println("el valor del segundo es correcto ");
 		}
 
 		if (hora > 24) {
-			System.out.println("su valor es incorrecto");
+			System.out.println("el valor de la hora es incorrecto");
 		}
 		if (min > 60) {
-			System.out.println("su valor es incorrecto");
+			System.out.println("el valor de los minutos es incorrecto");
 		}
 		if (seg > 60) {
-			System.out.println("su valor es incorrecto");
+			System.out.println("el valor de los segundos es incorrecto");
 		}
 
 		return;

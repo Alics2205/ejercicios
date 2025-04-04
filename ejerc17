@@ -1,0 +1,21 @@
+package ejercicio17;
+
+import java.util.Scanner;
+
+public class Ejerc17 {
+	public static void main(String[] args) throws InterruptedException {
+		Scanner ingreso = new Scanner(System.in);
+		int i = 1;
+
+		while (i <= 100) {
+			System.out.println(i);
+			i++;
+		}
+		System.out.println("llgaste a los 100 seguidores!!");
+		
+			Thread.sleep(20);
+		
+
+		}
+	}
+

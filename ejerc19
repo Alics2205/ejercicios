@@ -1,0 +1,37 @@
+package ejercicio19;
+
+import java.util.Scanner;
+
+public class Ejerc19 {
+	public static void main(String[] args) throws InterruptedException {
+		Scanner datos = new Scanner(System.in);
+
+		int contraseña; // 2008
+		int i = 0;
+
+		do {
+			System.out.println("Ingrese la contra: ");
+			contraseña = datos.nextInt();
+
+			if (contraseña != 2008) {
+
+				i++;
+
+				if (i < 3) {
+					System.out.println("volve a intentarlo.");
+					System.out.println("Intentos realizados: " + i);
+
+				}
+			}
+
+		} while (contraseña != 2008 && i < 3);
+
+		if (contraseña == 2008) {
+			System.out.println("su contraseña es correcta.");
+		}
+		if (contraseña != 2008) {
+			System.err.println("El usuario está bloqueado.");
+		}
+
+	}
+}

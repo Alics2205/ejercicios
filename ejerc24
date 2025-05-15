@@ -1,0 +1,22 @@
+package ejercicio24;
+
+	import java.util.Scanner;
+	public class ejerc24 {
+
+	public static void main(String[] args) throws InterruptedException {
+			Scanner datos = new Scanner(System.in);
+			int multip;
+			System.out.println("De que num quiere calcular la tabla? ");
+			 int num  = datos.nextInt();
+			
+			
+			for (int i = 0; i <= 15; i++) {
+			multip = num * i ;
+			System.out.println("El resultado de "+i+" por "+num+"da: "+multip) ;
+			}
+			
+		
+
+}
+	}
+

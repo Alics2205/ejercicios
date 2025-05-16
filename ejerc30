@@ -1,0 +1,88 @@
+package arrayss;
+
+
+
+import java.util.Scanner;
+
+
+
+enum Socio{ENRIQUE(1011), LILIANA (2367), LUCAS (8748), JUAN (9121), FIORELLA (817), ARIEL
+
+	(6423), DAIANA (2034);
+
+	private final int rt;
+
+	
+
+	Socio(int q){
+
+		this.rt =q;
+
+	}
+
+
+
+public int getdasy() {
+
+	return rt;
+
+}
+
+
+
+
+
+public int getNumeroSocio() { 
+
+    return rt;
+
+}
+
+	
+
+}
+
+
+
+
+
+public class arrayss {
+
+public static void main(String[] args) {
+
+	int socio;
+
+	 Scanner scanner = new Scanner(System.in);
+
+System.out.println("Para encontrar a un individuo, ingresar número de socio: ");
+
+	socio = scanner.nextInt();
+
+
+
+	for (Socio socio1 : Socio.values()) {
+
+        
+
+		if (socio1.getNumeroSocio() == socio) {
+
+            System.out.println("El número de socio " + socio + " corresponde a: " + socio1.name());
+
+            scanner.close();
+
+            return; 
+
+        }
+
+
+
+}
+
+	 
+
+}
+
+}
+
+	
+

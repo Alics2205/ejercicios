@@ -1,0 +1,43 @@
+package ejercicio34;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+
+public class ejercicio34 {
+
+	public static void main(String[] args) {
+		List<String> Listadealumnos = new ArrayList<>();
+		List<Integer> Listadenotas = new ArrayList<>();
+		Scanner entrada = new Scanner(System.in);
+		float suma = 0;
+
+		
+		while (true) {
+			System.out.println("ingrese nombre de alumno : ");
+			String NombreIngresado = entrada.next();
+			Listadealumnos.add(NombreIngresado);
+
+			if (NombreIngresado.equalsIgnoreCase("fin")) {
+				break;
+			}
+
+			System.out.println("Nota de alumno: ");
+			int NotaIngresada = entrada.nextInt();
+			suma += NotaIngresada; 
+			Listadenotas.add(entrada.nextInt());
+		}
+
+		Listadenotas.remove("fin"); // para que no aparezca "fin"
+		System.out.println("Nombre de los Alumnos: " + Listadealumnos);
+		System.out.println("Nombre de los Notas: " + Listadenotas);
+
+		System.out.println("Cantidad de Alumnos: " + Listadealumnos.size());
+
+		for (int i = 0;i< Listadealumnos.size(); i++) {
+			System.out.println("Nombre"+Listadenotas.get(i)+ "----Precio: " +Listadenotas.get(i));
+		
+		}
+		//incompleto
+	}
+}

@@ -1,0 +1,26 @@
+//el ejerc32 no cuenta
+package ejercicio33;
+
+import java.util.Collections;
+import java.util.Scanner;
+
+public class ejerc33 {
+	public static void main(String[] args) {
+		// String paisIngresado;
+		Scanner ingreso = new Scanner(System.in);
+//	boolean Encontrada = false;
+
+		String[] paises = { "Chile", "Argentina", "Brasil", "Colombia", "Ecuador", "Uruguay ", "Perú", "Surinam",
+				"Guyana ", "Venezuela" };
+
+		System.out.println("Ingrese el nombre de un país:");
+		String paisIngresado = new String();
+
+		if (paises == paisIngresado.equalsIgnoreCase(paisIngresado[i])) {
+			 System.out.println(paisIngresado + " es un país sudamericano.");
+		}else {
+            System.out.println(paisIngresado + " no está en Sudamérica.");
+        }
+//incompletp no c q hice 
+	}
+}

@@ -1,0 +1,32 @@
+package ejercicio30;
+
+import java.util.Scanner;
+
+public class Ejerc30 {
+	public static void main(String[] args) {
+
+		Scanner ingreso = new Scanner(System.in);
+		boolean Encontrada = false;
+
+		String[] jugadores = { "Enrique", "Liliana", "Lucas ", "Juan", "Fiorella", "Ariel", "Daiana" };
+		int[] numJug = { 1011, 2367, 8748, 9121, 817, 6423, 2034 };
+		int buscarJug;
+
+		System.out.println("ingrese el num del jugador: ");
+		buscarJug = ingreso.nextInt();
+		for (int i = 0; i < numJug.length; i++) {// para comparar EL NUMERO con el elemento
+
+			if (buscarJug == numJug[i]) {
+				System.out.println("el jugador num " + numJug[i] + " es : " + jugadores[i]);
+				Encontrada = true;
+				break;
+
+			}
+		}
+
+		if (Encontrada == false) {
+			System.err.println("El num de jugador no se encuentra");
+		}
+
+	}
+}

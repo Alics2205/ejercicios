@@ -1,0 +1,53 @@
+package ejercicio31;
+
+import java.util.Scanner;
+
+public class ejerc31 {
+	public static void main(String[] args) throws InterruptedException {
+
+		Scanner ingreso = new Scanner(System.in);
+
+		int[] NumCamiseta = { 1, 2, 4, 7, 9, 10, 13, 15, 21, 22, 25 };
+		int buscado;
+		System.out.println("Ingrese el num de la camiseta a buscar: ");
+		buscado = ingreso.nextInt();
+		// determinamos extremos osea desde 0 a [i]-1
+		int inicio = 0;
+		int fin = NumCamiseta.length - 1;
+		boolean Encontrada = false;
+
+		System.out.println("Se buscará entre " + NumCamiseta.length + " elementos");
+		Thread.sleep(1000);
+
+		while (inicio <= fin) {
+			// Calculamos la posición del MEDIO
+			int medio = (inicio + fin) / 2;
+
+			System.out.println("Probando posición " + medio + " con valor " + NumCamiseta[medio]);
+			Thread.sleep(2000);
+
+			if (NumCamiseta[medio] == buscado) {
+
+				System.out.println("\n---------");
+				System.out.println("Número encontrado en la posición: " + medio);
+				System.out.println("---------");
+				Encontrada = true;
+				break; // Salimos del bucle
+			}
+			if (NumCamiseta[medio] < buscado) {
+				System.err.println("El número es mayor a " + NumCamiseta[medio]);
+				inicio = medio + 1;
+			}
+// Si es mayor, buscamos en la mitad izquierda
+			else {
+				System.err.println("El número es menor a " + NumCamiseta[medio]);
+				fin = medio - 1;
+			}
+		}
+
+		if (!Encontrada) {
+			System.err.println("Número NO encontrado.");
+		}
+
+	}
+}

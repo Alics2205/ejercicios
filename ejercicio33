@@ -1,26 +1,79 @@
-//el ejerc32 no cuenta
+
 package ejercicio33;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ejerc33 {
+
 	public static void main(String[] args) {
-		// String paisIngresado;
-		Scanner ingreso = new Scanner(System.in);
-//	boolean Encontrada = false;
 
-		String[] paises = { "Chile", "Argentina", "Brasil", "Colombia", "Ecuador", "Uruguay ", "Perú", "Surinam",
-				"Guyana ", "Venezuela" };
+		Scanner scanner = new Scanner(System.in);
+		List<String> nombreAlumnos = new ArrayList<>();
+		List<Integer> notasAlumnos = new ArrayList<>();
+		float suma = 0;
+		float promedio = 0;
 
-		System.out.println("Ingrese el nombre de un país:");
-		String paisIngresado = new String();
+		while (true) {// para que se repita el ingreso una y otra vez
 
-		if (paises == paisIngresado.equalsIgnoreCase(paisIngresado[i])) {
-			 System.out.println(paisIngresado + " es un país sudamericano.");
-		}else {
-            System.out.println(paisIngresado + " no está en Sudamérica.");
-        }
-//incompletp no c q hice 
+			System.out.println("Nombre del alumno (o 'fin' para terminar):");
+			String ingresoNombre = scanner.next();
+
+			if (ingresoNombre.equalsIgnoreCase("fin")) {// a menos que ingrese "fin"
+				break;
+			}
+
+			System.out.println("nota del alumno: ");
+			int notas = scanner.nextInt();
+
+			// System.out.println("----------");
+
+			nombreAlumnos.add(ingresoNombre); // se ingresa los valores a la lista
+			notasAlumnos.add(notas); // se ingresa los valores a la lista
+
+			suma += notas;
+		}
+
+		System.out.println("Lista creada por el usuario:");// mostrar por pantalla los datos ingresados
+		for (int i = 0; i < nombreAlumnos.size(); i++) {
+			System.out.println(nombreAlumnos.get(i) + ": " + notasAlumnos.get(i));
+		}
+
+		System.out.println("queres cambiar alguna nota(si/no): ");
+		String respuesta = scanner.next();
+
+		if (respuesta.equalsIgnoreCase("si")) {
+			System.out.println("De quien queres cambiar la nota: ");
+			String nNotaMal = scanner.next();
+			int indice = nombreAlumnos.indexOf(nNotaMal);// pedis la posicion en la que se encuentraba
+			// CAMBIAS LA NOTA
+			if (indice != -1) {
+				System.out.println("La nota actual de " + nNotaMal + " es: " + notasAlumnos.get(indice));
+				System.out.print("Ingresa la nueva nota: ");
+				int nuevaNota = scanner.nextInt();
+				suma -= notasAlumnos.get(indice); // Se le elimina el valor anterior de la nota equivocada
+
+				notasAlumnos.set(indice, nuevaNota);
+
+				suma += nuevaNota; // Se le agrega el valor nuevo de la nota ingresada
+
+				//SI EL NOMBRE NO ESTA EN LA LISTA 
+			} else {
+				System.err.println("Alumno no encontrado.");
+			}
+
+		}
+		System.out.println("\nLista actualizada de alumnos y sus notas:");
+		for (int i = 0; i < nombreAlumnos.size(); i++) {
+			System.out.println(nombreAlumnos.get(i) + ": " + notasAlumnos.get(i));
+		}
+		
+		//PROMEDIO AL FINAL PARA TENER EN CUENTA LA NOTA ACTUALIZADA
+		
+		promedio = suma / nombreAlumnos.size();
+
+		System.out.println("El promedio de las notas ingresadas es de : " + promedio);
+
 	}
 }

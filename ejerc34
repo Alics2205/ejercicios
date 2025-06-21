@@ -1,0 +1,44 @@
+package ejercicio34;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+
+public class ejerc34 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		List<String> equiposDeFutbol = new ArrayList<>();
+		// List<Integer> notasAlumnos = new ArrayList<>();
+
+		while (true) {
+			System.out.println("ingrese el nombre del club: ");
+			String NombreDelClub = scanner.nextLine();
+			equiposDeFutbol.add(NombreDelClub);
+			
+			if (NombreDelClub.equalsIgnoreCase("fin")) {
+				break;
+			}
+		}
+			
+		
+		HashSet<String> set = new HashSet<>(equiposDeFutbol);
+		equiposDeFutbol.clear();
+		equiposDeFutbol.addAll(set);
+		
+		
+		
+	
+		/* for (String elemento : equiposDeFutbol ) {
+			System.out.println(elemento);
+		}*/
+		
+		System.out.println(equiposDeFutbol); 
+			int tamano = equiposDeFutbol.size();
+			System.out.println("la lista tiene " + tamano+ " elementos" );
+		
+		
+	}
+}

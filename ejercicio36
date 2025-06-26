@@ -1,0 +1,99 @@
+package ejercicio36;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ejerc36 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		List<String> jugadores = new ArrayList<>();
+		List<Integer> numJug = new ArrayList<>();
+
+		jugadores.add("Enrique");
+		jugadores.add("Liliana");
+		jugadores.add("Lucas");
+		jugadores.add("Juan");
+		jugadores.add("Fiorella");
+		jugadores.add("Ariel");
+		jugadores.add("Daiana");
+
+		numJug.add(1011);
+		numJug.add(2367);
+		numJug.add(8748);
+		numJug.add(9121);
+		numJug.add(817);
+		numJug.add(6423);
+		numJug.add(2034);
+
+		System.out.println(" Segun que quiere ingrese el num correspondiente " + " \r\n • 1 eliminar elemento"
+				+ "\r\n • 2 Modificar elemento " + "\r\n......\r\n");
+		int respuesta = scanner.nextInt();
+
+		do  { 
+			
+	/*(respuesta > 0 && respuesta < 3)// un while para quye repita una y otra vez*/
+
+			if (respuesta == 1) {
+				System.out.println("ingrese el num del jugador que quiere eliminar?: ");
+
+				int elementoEliminado = scanner.nextInt();
+				// scanner.nextLine(); // Limpiar buffer...
+
+				int posicionEnLaLista = numJug.indexOf(elementoEliminado);// comprueba que el dato este en la lista y
+																			// devuelve el indice
+
+				if (posicionEnLaLista != -1) {
+					numJug.remove(elementoEliminado);// elimina el elemento del indice que se nos devolvio
+
+					jugadores.remove(posicionEnLaLista);
+
+					System.out.println("Jugador eliminado correctamente.");
+
+				} else {// sino se encuentra en lista
+
+					System.out.println("Número de socio no encontrado en la lista.");
+				}
+
+			} else if (respuesta == 2) {
+
+				System.out.println("que elemento quiere modificar: ");
+				String elementoAModificar = scanner.nextLine();
+				scanner.nextLine(); // Limpiar buffer...
+
+				int posicionEnLaLista = numJug.indexOf(elementoAModificar);
+
+				if (posicionEnLaLista != -1) {
+					System.out.println("ingrese el nuevo nombre: ");
+					String nuevoNombre = scanner.nextLine();
+					System.out.println("Ingrese el nuevo número de socio: ");
+					int nuevoNumero = scanner.nextInt();
+					jugadores.set(posicionEnLaLista, nuevoNombre);
+					numJug.set(posicionEnLaLista, nuevoNumero);
+					System.out.println("Datos modificados correctamente.");
+
+				} else {
+					System.out.println("Número de socio no encontrado en la lista.");
+
+				}
+
+			} 
+			// MOSTRAR LA LISTA MODIFICADA
+
+			System.out.println("Lista de socios actualizada:");
+		}
+
+		while (respuesta  < 3);{
+			System.err.println("es incorrecta");
+			System.out.println("Vuelva a ingresar una opción( 1 o 2 )");
+		
+		}
+		
+		
+		for (int i = 0; i < numJug.size(); i++) {
+			System.out.println("Nombre: " + jugadores.get(i) + ", Número de socio: " + numJug.get(i));
+
+		}
+	}
+}

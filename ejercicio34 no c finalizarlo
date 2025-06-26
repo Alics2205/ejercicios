@@ -33,13 +33,15 @@ public class ejerc34 {
 	
 		 for (String elemento : equiposDeFutbol ) {
 			System.out.println("la lista tiene " + elemento);
-			int tamano = equiposDeFutbol.size();
+			
+		
+
 		 }
 		
 //		System.out.println(equiposDeFutbol); 
 //			int tamano = equiposDeFutbol.size();
 //			System.out.println("la lista tiene " + tamano+ " elementos" );
-//		
-		
+           	int tamano = equiposDeFutbol.size();
+			System.out.println("la lista tiene " + tamano+ " elementos" );	
 	}
 }

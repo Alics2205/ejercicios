@@ -1,0 +1,24 @@
+package ejercicio37;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Ejercicio37 {
+	public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	List<string> dniS = new ArrayList<>();
+	
+	while (true) {// para que se repita el ingreso una y otra vez
+
+		System.out.println("ingrese el dni (o 'fin' para terminar):");
+		String ingresoDni = scanner.next();
+		scanner.nextLine();
+
+		if (ingresoDni.equalsIgnoreCase("fin")) {// a menos que ingrese "fin"
+			break;	
+		}
+		
+	 	dniS.add(ingresoDni); // se ingresa los valores a la lista
+}
+	
+	
+}}

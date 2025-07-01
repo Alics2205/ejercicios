@@ -27,12 +27,12 @@ public class ejerc34 {
 		HashSet<String> set = new HashSet<>(equiposDeFutbol);
 		equiposDeFutbol.clear();
 		equiposDeFutbol.addAll(set);
-		
+		equiposDeFutbol.remove("fin");// lo use para que no incluya como un equipo mas
 		
 		
 	
 		 for (String elemento : equiposDeFutbol ) {
-			System.out.println("la lista tiene " + elemento);
+			System.out.println("equipo " + elemento);
 			
 		
 

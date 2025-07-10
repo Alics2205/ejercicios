@@ -1,0 +1,53 @@
+package ejercicio38;
+
+import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ejercicio38 {
+	public static void main(String[] args) {
+		Scanner Ingreso = new Scanner(System.in);
+		List<Integer> edads = new ArrayList<>();
+		List<String> nombres = new ArrayList<>();
+
+		System.out.println("cuantas personas va a ingresar: ");
+		int cantidad = Ingreso.nextInt();
+		Ingreso.nextLine();
+
+		for (int i = 0; i < cantidad; i++) {
+
+			System.out.println("ingrese el nombre de la persona " +(i + 1) + ": ");
+			String ingresoNombre = Ingreso.nextLine();
+		System.out.println("");
+			System.out.println("ingrese la edad de "+ ingresoNombre + ": ");
+			int ingresoEdad = Ingreso.nextInt();
+			Ingreso.nextLine(); 
+			
+			nombres.add(ingresoNombre);
+			edads.add(ingresoEdad);
+
+			System.out.println(edads);
+			System.out.println(nombres);
+
+		}
+
+		for (int i = 0; i < edads.size() - 1; i++) {
+			for (int j = 0; j < edads.size() - 1 - i; j++) {
+				if (edads.get(j) > edads.get(j + 1)) {
+
+					int aux = edads.get(j + 1);
+					edads.set(j + 1, edads.get(j));
+					edads.set(j + 1, aux);
+				}
+
+			}
+		}
+
+		System.out.println("Personas ordenadas por edad (descendente): ");
+		for (int i = 0; i < nombres.size(); i++) {
+			System.out.println(nombres.get(i) + " - " + edads.get(i));
+		}
+
+	}
+}

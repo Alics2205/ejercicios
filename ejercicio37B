@@ -1,0 +1,64 @@
+package ejercicio37B;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ejercicio37B {
+	public static void main(String[] args) {
+		Scanner lectura = new Scanner(System.in);
+
+		List<Integer> DNI = new ArrayList<>();
+
+		while (true) {
+			System.out.println("ingrese un num de DNI: ");
+			System.out.println("/Ingrese fin para finalizar/");
+			String respuesta = lectura.next();// se guarda el dato en string por el "fin"
+
+			if (respuesta.equalsIgnoreCase("fin")) {
+				break;
+			}
+
+			int pasarRespuestaAEntero = Integer.parseInt(respuesta);// aca se cambia el tipo de dato
+
+			DNI.add(pasarRespuestaAEntero);
+
+		}
+
+		for (int i = 0; i < DNI.size() - 1; i++) {
+
+			for (int j = 0; j < DNI.size() - i - 1; j++) {
+
+				if (DNI.get(j) > DNI.get(j + 1)) {
+
+					int aux = DNI.get(j);
+
+					DNI.set(j, DNI.get(j + 1));
+
+					DNI.set(j + 1, aux);
+				}
+
+			}
+
+		}
+
+		System.out.println("Lista ordenada ascendente" + DNI);
+
+		for (int i = 0; i < (DNI.size() - 1); i++) {
+
+			for (int j = 0; j < (DNI.size() - i - 1); j++) {
+
+				if (DNI.get(j) < DNI.get(j + 1)) {
+					int temporal = DNI.get(j);
+
+					DNI.set(j, DNI.get(j + 1));
+
+					DNI.set(j + 1, temporal);
+				}
+
+			}
+		}
+
+		System.out.println("Lista ordenada descendente" + DNI);
+	}
+}

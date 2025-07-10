@@ -1,0 +1,36 @@
+package ejercicio43;
+
+import java.util.Scanner;
+
+public class Ejercicio43 {
+	public static int ingresarEdad() {
+		Scanner scanner = new Scanner(System.in);
+		int edad;
+		do {
+			System.out.print("Por favor, ingresa tu edad: ");
+			edad = scanner.nextInt();
+			if (edad < 0) {
+				System.out.println("La edad no puede ser negativa. Intenta nuevamente.");
+			}
+		} while (edad < 0);
+		return edad;
+	}
+
+	// Método para evaluar la edad y mostrar el mensaje correspondiente
+	public static void evaluarEdad(int edad) {
+		if (edad < 13) {
+			System.out.println("Sos un niño/a");
+		} else if (edad >= 13 && edad <= 17) {
+			System.out.println("Sos un adolescente");
+		} else if (edad >= 18 && edad <= 64) {
+			System.out.println("Sos un adulto");
+		} else {
+			System.out.println("Sos un adulto mayor");
+		}
+	}
+
+	public static void main(String[] args) {
+		int edad = ingresarEdad();
+		evaluarEdad(edad);
+	}
+}

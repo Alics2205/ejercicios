@@ -1,0 +1,80 @@
+package ejercicio41;
+
+import java.util.Scanner;
+
+public class Ejercicio41 {
+	// Variable para mantener el saldo
+	private static double saldo = 10000.0;
+	private static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		boolean salir = false;
+
+		while (!salir) {
+			mostrarMenu();
+			int opcion = scanner.nextInt();
+
+			switch (opcion) {
+			case 1:
+				verSaldo();
+				break;
+			case 2:
+				depositarDinero();
+				break;
+			case 3:
+				retirarDinero();
+				break;
+			case 4:
+				salir = true;
+				System.out.println("Gracias por usar el cajero. ¡Hasta luego!");
+				break;
+			default:
+				System.out.println("Opción inválida. Intenta nuevamente.");
+			}
+		}
+		
+	}
+
+	// Procedimiento para mostrar el menú
+	private static void mostrarMenu() {
+		System.out.println("\n--- Menú del Cajero ---");
+		System.out.println("1. Ver saldo");
+		System.out.println("2. Depositar dinero");
+		System.out.println("3. Retirar dinero");
+		System.out.println("4. Salir");
+		System.out.print("Selecciona una opción: ");
+	}
+
+	// Procedimiento para ver saldo
+	private static void verSaldo() {
+		System.out.println("Tu saldo actual es: $" + saldo);
+	}
+
+	// Procedimiento para depositar dinero
+	private static void depositarDinero() {
+		System.out.print("Ingresa la cantidad a depositar: $");
+		double cantidad = scanner.nextDouble();
+		if (cantidad > 0) {
+			saldo += cantidad;
+			System.out.println("Depósito realizado con éxito. Nuevo saldo: $" + saldo);
+		} else {
+			System.out.println("Cantidad inválida.");
+		}
+	}
+
+	// Procedimiento para retirar dinero
+	private static void retirarDinero() {
+		System.out.print("Ingresa la cantidad a retirar: $");
+		double cantidad = scanner.nextDouble();
+		if (cantidad > 0) {
+			if (cantidad <= saldo) {
+				saldo -= cantidad;
+				System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
+			} else {
+				System.out.println("Fondos insuficientes.");
+			}
+		} else {
+			System.out.println("Cantidad inválida.");
+		}
+	}
+}

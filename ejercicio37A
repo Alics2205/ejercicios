@@ -1,0 +1,38 @@
+package ejercicio37A;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ejercicio37 {
+	public static void main(String[] args) {
+		Scanner Ingreso = new Scanner(System.in);
+
+		System.out.println("Ingresa la cant de DNIs a ingresar: ");
+		int cantDNI = Ingreso.nextInt();
+
+		int[] DNIs = new int[cantDNI];
+
+		for (int i = 0; i < cantDNI; i++) {
+			System.out.println("ingrese el DNI: ");
+			DNIs[i] = Ingreso.nextInt();
+		}
+		for (int i = 0; i < DNIs.length - 1; i++) {
+			for (int j = 0; j < DNIs.length - 1 - i; j++) {// este es para el indice q queda de mas
+				if (DNIs[j] > DNIs[j + 1]) {
+					int aux = DNIs[j];
+					DNIs[j] = DNIs[j + 1];
+					DNIs[j + 1] = aux ;
+
+				}
+			}
+		}
+
+
+        System.out.println("DNI ordenados en orden descendente: ");
+        for (int dni : DNIs) {
+            System.out.print(dni + " ");
+            }
+		
+	}
+}

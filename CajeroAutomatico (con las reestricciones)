@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class CajeroAutomatico {
+    // Variable global para el saldo
+    static double saldo = 0.0;
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        boolean salir = false;
+
+        while (!salir) {
+            // Menú de opciones
+            System.out.println("\n--- Menú del Cajero Automático ---");
+            System.out.println("1. Ver saldo");
+            System.out.println("2. Depositar dinero");
+            System.out.println("3. Retirar dinero");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    verSaldo();
+                    break;
+                case 2:
+                    depositarDinero();
+                    break;
+                case 3:
+                    retirarDinero();
+                    break;
+                case 4:
+                    salir = true;
+                    System.out.println("Gracias por usar el cajero. ¡Hasta luego!");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+        }
+    }
+
+    // Procedimiento para ver saldo
+    public static void verSaldo() {
+        System.out.println("El saldo actual es: $" + saldo);
+    }
+
+    // Procedimiento para depositar dinero
+    public static void depositarDinero() {
+        System.out.print("Ingrese la cantidad a depositar: ");
+        double cantidad = scanner.nextDouble();
+        if (cantidad > 0) {
+            saldo += cantidad;
+            System.out.println("Depósito exitoso. Nuevo saldo: $" + saldo);
+        } else {
+            System.out.println("Cantidad inválida.");
+        }
+    }
+
+    // Procedimiento para retirar dinero con verificación de fondos
+    public static void retirarDinero() {
+        System.out.print("Ingrese la cantidad a retirar: ");
+        double cantidad = scanner.nextDouble();
+        if (cantidad > 0) {
+            if (cantidad <= saldo) {
+                saldo -= cantidad;
+                System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
+            } else {
+                System.out.println("Fondos insuficientes.");
+            }
+        } else {
+            System.out.println("Cantidad inválida.");
+        }
+    }
+}

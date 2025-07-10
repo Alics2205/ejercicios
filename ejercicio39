@@ -1,0 +1,96 @@
+package ejercicio39;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Ejercicio39 {
+	enum Opciones {
+		AGREGAR, ATENDER, PROXIMO, MOSTRAR, SALIR
+	}
+
+	public static void main(String[] args) {
+		 Scanner scanner = new Scanner(System.in);
+	        Queue<String> cola = new LinkedList<>();
+	        boolean continuar = true;
+
+	        while (true) {
+	            mostrarMenu();
+	            int opcion = scanner.nextInt();
+	            scanner.nextLine(); // Consumir el salto de línea
+
+	            switch (opcion) {
+	                case 1:
+	                    agregarPersona(cola, scanner);
+	                    break;
+	                case 2:
+	                    atenderPersona(cola);
+	                    break;
+	                case 3:
+	                    mostrarProximo(cola);
+	                    break;
+	                case 4:
+	                    mostrarCola(cola);
+	                    break;
+	                case 5:
+	                    continuar = false;
+	                    System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
+	                    break;
+	                default:
+	                    System.out.println("Opción inválida. Por favor, ingrese una opción válida.");
+	            }
+	        }
+
+	      
+	    }
+
+	    // Función para mostrar el menú
+	    public static void mostrarMenu() {
+	        System.out.println("\n--- Menú de la Verdulería ---");
+	        System.out.println("1. Agregar una persona a la cola");
+	        System.out.println("2. Atender a la primera persona");
+	        System.out.println("3. Ver quién es el próximo");
+	        System.out.println("4. Mostrar toda la cola");
+	        System.out.println("5. Salir");
+	        System.out.print("Seleccione una opción: ");
+	    }
+
+	    // Función para agregar una persona
+	    public static void agregarPersona(Queue<String> cola, Scanner scanner) {
+	        System.out.print("Ingrese el nombre de la persona: ");
+	        String nombre = scanner.nextLine();
+	        cola.add(nombre);
+	        System.out.println(nombre + " ha sido agregado a la cola.");
+	    }
+
+	    // Función para atender a la primera persona
+	    public static void atenderPersona(Queue<String> cola) {
+	        if (cola.isEmpty()) {
+	            System.out.println("La cola está vacía. No hay personas para atender.");
+	        } else {
+	            String atendido = cola.poll();
+	            System.out.println("Atendiendo a: " + atendido);
+	        }
+	    }
+
+	    // Función para mostrar quién es el próximo
+	    public static void mostrarProximo(Queue<String> cola) {
+	        if (cola.isEmpty()) {
+	            System.out.println("La cola está vacía.");
+	        } else {
+	            System.out.println("La próxima persona en la cola es: " + cola.peek());
+	        }
+	    }
+
+	    // Función para mostrar toda la cola
+	    public static void mostrarCola(Queue<String> cola) {
+	        if (cola.isEmpty()) {
+	            System.out.println("La cola está vacía.");
+	        } else {
+	            System.out.println("Personas en la cola:");
+	            for (String persona : cola) {
+	                System.out.println("- " + persona);
+	            }
+	        }
+	    }
+	}

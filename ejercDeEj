@@ -1,0 +1,93 @@
+import java.util.*;
+
+// Enum para las operaciones disponibles
+enum Operacion {
+    INGRESAR, MOSTRAR, BUSCAR_LINEAL, BUSCAR_BINARIA, ORDENAR_BURBUJA, ORDENAR_SORT, ELIMINAR, USAR_PILA, USAR_COLA, SALIR
+}
+
+// Clase principal
+public class GestorNumeros {
+    private static List<Integer> numeros = new ArrayList<>();
+    private static Stack<Integer> pila = new Stack<>();
+    private static Queue<Integer> cola = new LinkedList<>();
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        boolean salir = false;
+        while (!salir) {
+            mostrarMenu();
+            int opcion = scanner.nextInt();
+            Operacion operacion = convertirAOperacion(opcion);
+            switch (operacion) {
+                case INGRESAR:
+                    ingresarNumero();
+                    break;
+                case MOSTRAR:
+                    mostrarNumeros();
+                    break;
+                case BUSCAR_LINEAL:
+                    buscarLineal();
+                    break;
+                case BUSCAR_BINARIA:
+                    buscarBinaria();
+                    break;
+                case ORDENAR_BURBUJA:
+                    ordenarBurbuja();
+                    break;
+                case ORDENAR_SORT:
+                    ordenarSort();
+                    break;
+                case ELIMINAR:
+                    eliminarNumero();
+                    break;
+                case USAR_PILA:
+                    usarPila();
+                    break;
+                case USAR_COLA:
+                    usarCola();
+                    break;
+                case SALIR:
+                    System.out.println("¡Hasta luego!");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intenta de nuevo.");
+            }
+        }
+    }
+
+    private static void mostrarMenu() {
+        System.out.println("\n--- Menú de Gestión de Números ---");
+        System.out.println("1. Ingresar un número");
+        System.out.println("2. Mostrar todos los números");
+        System.out.println("3. Buscar número (búsqueda lineal)");
+        System.out.println("4. Buscar número (búsqueda binaria)");
+        System.out.println("5. Ordenar lista (burbuja)");
+        System.out.println("6. Ordenar lista (sort)");
+        System.out.println("7. Eliminar un número");
+        System.out.println("8. Usar pila (últimos 5 números)");
+        System.out.println("9. Usar cola (procesar en orden)");
+        System.out.println("10. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
+
+    private static Operacion convertirAOperacion(int opcion) {
+        switch (opcion) {
+            case 1: return Operacion.INGRESAR;
+            case 2: return Operacion.MOSTRAR;
+            case 3: return Operacion.BUSCAR_LINEAL;
+            case 4: return Operacion.BUSCAR_BINARIA;
+            case 5: return Operacion.ORDENAR_BURBUJA;
+            case 6: return Operacion.ORDENAR_SORT;
+            case 7: return Operacion.ELIMINAR;
+            case 8: return Operacion.USAR_PILA;
+            case 9: return Operacion.USAR_COLA;
+            case 10: return Operacion.SALIR;
+            default: return null;
+        }
+    }
+
+    private static void ingresarNumero() {
+        System.out.print("Ingresa un número entero: ");
+        int num = scanner.nextInt();
+        numeros.add(num);

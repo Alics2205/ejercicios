@@ -1,0 +1,160 @@
+package evaluacion;
+
+//+56 9 1244 3703 numero que use para probar el programa 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AgendaDeContactos {
+	static List<String> nombres = new ArrayList<>();
+
+	static List<String> números = new ArrayList<>();
+
+	static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		nombres.add("Enrique");
+		nombres.add("Liliana");
+		nombres.add("Lucas");
+		números.add("+56 9 8959 3703");// cambie los nuemeros de telefono
+		números.add("+56 9 7359 3673");
+		números.add("+56 9 1039 9425");
+
+		int opcion;// cree la varible opcion para que sea global y poder reutilizarla varias veces
+
+		
+/*error#1*/do { // reemplaze el while por un do para que el bucle SI pueda finalizar con la
+				// opcion 5
+
+			mostrarMenu();
+
+			opcion = scanner.nextInt();// deje de iniciar la varible "opcion" solo en el "do"
+			scanner.nextLine();
+
+			switch (opcion) {
+			case 1:
+				verContactos();
+				break;
+			case 2:
+				agregarContacto();
+				break;
+			case 3:
+				buscarContacto();
+				break;
+			case 4:
+				eliminarContacto();
+				break;
+			case 5:
+				/* error#2*///elimine la boleana ya que no era necesaria 
+				System.out.println("Salio de la agenda.");// modifique lo que mostraba por pantalla
+
+				break;
+			default:
+				System.err.println("Opción inválida. Intenta nuevamente.");
+			}
+		} while (opcion != 5);// agregue el while del "do" para poder salir del programa
+
+	}
+
+	private static void mostrarMenu() {
+/* error#3*/System.out.println("\n--- Menú ---");// cambie lo que se muestra por pantalla
+		System.out.println("1. ver Contactos");
+		System.out.println("2. Agregar un nuevo contacto");
+		System.out.println("3. Buscar un contacto por nombre");
+		System.out.println("4. Eliminar un contacto");
+/* error#4*/System.out.println("5. Salir");// hice que se vea por pantalla que hacia la opcion 5
+		System.out.print("Selecciona una opción: ");
+	}
+
+//1. ver Contactos
+	public static void verContactos() {
+
+		for (int i = 0; i < nombres.size(); i++) {
+			System.out.println(nombres.get(i) + "\t" + números.get(i));
+		}
+
+		// ordenamiento burbuja
+
+		for (int i = 0; i < nombres.size() - 1; i++) {
+			for (int j = 0; j < nombres.size() - i - 1; j++) {
+		/*error#5*/	if (nombres.get(i).compareTo(nombres.get(i + 1)) > 0) {// agregue el "compareTo" para que compare el
+																		// elemto con la lista
+
+					// Intercambiar las palabras
+
+		/*error#5*/String temp = nombres.get(i); // error_ modifique la forma en la que intercambie el valor de los
+													// elementos de las listas
+		/*error#5*/nombres.set(j, nombres.get(j + 1));
+		/*error#5*/nombres.set(j + 1, temp);
+				}
+			}
+		}
+	}
+
+	// 2. Agregar un nuevo contacto
+	public static void agregarContacto() {
+
+		System.out.print("Ingrese un nombre: ");
+		String ingresoNombre = scanner.nextLine();
+
+		System.out.print("Ingrese el num de " + ingresoNombre + ": ");
+		String ingresoNum = scanner.nextLine();
+
+		números.add(ingresoNum);
+		nombres.add(ingresoNombre);
+
+		System.out.println("Se agrego correctamente.");
+	}
+
+//3. Buscar un contacto por nombre
+	public static void buscarContacto() {
+
+		boolean esEncontrado = false;
+		System.out.println("Que nombre desea buscar?: ");
+		String nombreBuscado = scanner.next();
+		scanner.nextLine();
+
+//		Principio de la busqueda lineal
+		for (int i = 0; i < nombres.size(); i++) {
+
+			if (nombreBuscado.equalsIgnoreCase(nombres.get(i))) {// arregle la busqueda lineal
+
+				System.out.println("Se encontro el nombre " + nombres.get(i) + " en la posicion " + i);
+				System.out.println("el numero de " + nombres.get(i) + " es: " + números.get(i));
+				esEncontrado = true;
+			}
+		}
+
+//		Fin de la busqueda lineal	
+
+		if (esEncontrado == false) {
+/*error#6*/System.err.println("No se encontro el contacto.");// cambie lo que se muestra por pantalla
+		}
+	}
+
+//4. Eliminar un contacto
+/*error#6*/public static void eliminarContacto() {// modifique toda la funcion por una falta de compresion de la consigna
+
+		System.out.println("ingrese la posicion del contacto (de 1 a " + nombres.size() + ") : ");
+		int posicion = scanner.nextInt();
+
+		if (posicion >= 0 && posicion <= nombres.size()) {
+
+			int posicionEliminado = posicion - 1;// le resto uno para que funcione bien con la forma en la que se
+													// guardan los elementos
+
+			String nombreEliminado = nombres.get(posicionEliminado);
+			String numerosEliminado = números.get(posicionEliminado);
+
+			nombres.remove(nombreEliminado);
+			números.remove(numerosEliminado);
+
+			System.out.println(" se elimino el contacto de " + nombreEliminado);
+
+		} else {
+			System.err.println("Posicion no encontrada");
+		}
+
+	}
+
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Desafio_45 {
+	static Scanner entrada = new Scanner(System.in);
+
+	public static void main(String[] args) {
+	
+	System.out.println("Ingrese número decimal: ");	
+	float numIngresado = entrada.nextFloat();
+	
+	System.out.println("su parte fraccionaria es: "+ resta(numIngresado));
+	
+	}
+	public static float resta( float numIngresado ) {
+		
+	int numInt = (int) numIngresado;
+	
+	return numIngresado - numInt;
+		
+	}
+	
+	
+	
+	
+}

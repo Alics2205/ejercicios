@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Desafio_47 {
+	static Scanner entrada = new Scanner(System.in);
+	static int costo = 15000;
+	static float porcentaje = 0.1f;
+
+
+	public static void main(String[] args) {
+		ingresoCostoTotal();
+	}
+
+	public static void ingresoCostoTotal() {
+		System.out.println("ingrese el costo total: ");
+		int ingresoCostoT = entrada.nextInt();
+	}
+
+	public static int evaluar (int ingresoCostoT) {
+	
+		if (ingresoCostoT > costo) {
+			
+			float porcentaje = ingresoCostoT * porcentaje;
+
+			return porcentaje;
+			
+		} else {
+			System.out.println("su costo total es:" + ingresoCostoT);
+		}
+		
+	
+	}
+}

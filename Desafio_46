@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Desafio_46 {
+	static Scanner entrada = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		System.out.println("Ingrese una frase: ");
+		String fraseIngreso = entrada.nextLine();
+
+		System.out.println("La cantidad de vocales de la frase es: " + contarVocales(fraseIngreso) );
+	}
+
+	public static int contarVocales(String fraseIngresada) {
+
+		int contador = 0;
+
+		for (int i = 0; i < fraseIngresada.length(); i++) {
+			char posicionCaracter = fraseIngresada.charAt(i);
+			if (posicionCaracter == 'a' || posicionCaracter == 'e' || posicionCaracter == 'i' 
+					|| posicionCaracter == 'o' || posicionCaracter == 'u'  
+					) {
+				contador++;
+			}
+
+		}
+
+		return contador;
+	}
+}

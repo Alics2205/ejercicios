@@ -5,28 +5,42 @@ public class Desafio_47 {
 	static int costo = 15000;
 	static float porcentaje = 0.1f;
 
-
 	public static void main(String[] args) {
-		ingresoCostoTotal();
+		float valorIngreaso = ingresoCostoTotal();
+		evaluar(valorIngreaso);
+		System.out.println("-----");
+		evaluar(28000);
+		evaluar(11000);
 	}
 
-	public static void ingresoCostoTotal() {
+	public static float ingresoCostoTotal() {
 		System.out.println("ingrese el costo total: ");
-		int ingresoCostoT = entrada.nextInt();
+		float ingresoCostoT = entrada.nextInt();
+		
+		return ingresoCostoT;
 	}
 
-	public static int evaluar (int ingresoCostoT) {
-	
-		if (ingresoCostoT > costo) {
-			
-			float porcentaje = ingresoCostoT * porcentaje;
+	// función que reciba como parámetro el costo total de la
+//	compra
+	public static float evaluar(float ingresoCostoT) {
 
-			return porcentaje;
-			
-		} else {
-			System.out.println("su costo total es:" + ingresoCostoT);
-		}
+		if (ingresoCostoT > costo) {
+
+			float porcentaje = (ingresoCostoT * 10.0f) / 100.0f ;
 		
-	
+			float resta = ingresoCostoT - porcentaje;
+
+			System.out.println("el total de su compra con el 10% es de: "+ resta);
+			
+			return porcentaje;
+
+		} else {
+			
+			System.out.println("su costo total es: " + ingresoCostoT);
+
+			return ingresoCostoT;
+
+		}
+
 	}
 }

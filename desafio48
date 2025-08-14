@@ -1,0 +1,37 @@
+package desafio48;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class desafio48 {
+	static Scanner lectura = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		mostrarTareas(cargarTarea());
+	}
+
+	public static ArrayList<String> cargarTarea() {
+		ArrayList<String> Tareas = new ArrayList<>();
+		while (true) {
+			System.out.println("Ingrese tarea: ");
+			String IngresoTarea = lectura.nextLine();
+
+			if (IngresoTarea.equalsIgnoreCase("fin")) {
+				break;
+			}
+			Tareas.add(IngresoTarea);
+
+		}
+		return Tareas;
+	}
+
+	public static void mostrarTareas(ArrayList<String> Tareas) {
+		System.out.println("Tareas pendientes:");
+		for (int i = 0; i < Tareas.size(); i++) {
+			System.out.println((i + 1) + "." + Tareas.get(i));
+		}
+		System.out.println("Cantidad de tareas pendientes: " + Tareas.size());
+
+	}
+}

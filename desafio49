@@ -1,0 +1,19 @@
+package desafio49;
+
+import java.util.Scanner;
+
+public class desafio49 {
+	static Scanner Ingreso = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		System.out.println("cuántasa mediciones desea cargar?: ");
+		int vecesDelDia = Ingreso.nextInt();
+
+		int[] guardarCant = new int[vecesDelDia];
+
+		System.out.println("ingresa una temp:");
+
+	}
+
+}
